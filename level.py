@@ -5,6 +5,7 @@ from player import Player
 from debug import debug
 from support import *
 from random import choice
+from weapon import Weapon
 
 class Level:
     def __init__(self):
@@ -43,18 +44,21 @@ class Level:
                         if style == 'object':
                             surf = graphics['object'][int(col)]
                             Tile((x,y), [self.visible_sprites, self.obstacle_sprites], 'object', surf)
-        #         if col == "x":
+        #         if col == "x":    
         #             Tile((x, y), [self.visible_sprites,self.obstacle_sprites])
         #         if col == "p":
         #             self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites)
-        self.player = Player((2000, 1453), [self.visible_sprites], self.obstacle_sprites)
+        self.player = Player((2000, 1453), [self.visible_sprites], self.obstacle_sprites, self.create_attack)
                 
 
     def run(self):
         # update and draw the game
         self.visible_sprites.custom_draw(self.player)
         self.visible_sprites.update()
+        debug(self.player.status)
 
+    def create_attack(self):
+        Weapon(self.player, [self.visible_sprites])
 
 class YSortCameraGroup(pygame.sprite.Group):
     def __init__(self):
