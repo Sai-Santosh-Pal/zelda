@@ -16,6 +16,9 @@ class Level:
         self.visible_sprites = YSortCameraGroup()
         self.obstacle_sprites = pygame.sprite.Group()
 
+        # attack sprite
+        self.current_attack = None
+
         # sprite setup
         self.create_map()
 
@@ -47,7 +50,7 @@ class Level:
                             Tile((x,y), [self.visible_sprites, self.obstacle_sprites], 'object', surf)
                         if style == 'entities':
                             if col == '394':  # example value for player tile
-                                self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites, self.create_attack)
+                                self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites, self.create_attack, self.destroy_weapon)
         #         if col == "x":    
         #             Tile((x, y), [self.visible_sprites,self.obstacle_sprites])
         #         if col == "p":
@@ -62,7 +65,13 @@ class Level:
         debug(self.player.status)
 
     def create_attack(self):
-        Weapon(self.player, [self.visible_sprites])
+        self.current_attack = Weapon(self.player, [self.visible_sprites])
+
+    def destroy_weapon(self):
+        if self.current_attack:
+            self.current_attack.kill()
+        self.current_attack = None
+
 
 class YSortCameraGroup(pygame.sprite.Group):
     def __init__(self):
