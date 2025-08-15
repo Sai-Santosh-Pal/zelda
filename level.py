@@ -24,6 +24,7 @@ class Level:
             'boundary': import_csv_layout('map/map_FloorBlocks.csv'),
             'grass': import_csv_layout('map/map_Grass.csv'),
             'object': import_csv_layout('map/map_LargeObjects.csv'),
+            'entities': import_csv_layout('map/map_Entities.csv')
         }
 
         graphics = {
@@ -44,11 +45,14 @@ class Level:
                         if style == 'object':
                             surf = graphics['object'][int(col)]
                             Tile((x,y), [self.visible_sprites, self.obstacle_sprites], 'object', surf)
+                        if style == 'entities':
+                            if col == '394':  # example value for player tile
+                                self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites, self.create_attack)
         #         if col == "x":    
         #             Tile((x, y), [self.visible_sprites,self.obstacle_sprites])
         #         if col == "p":
         #             self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites)
-        self.player = Player((2000, 1453), [self.visible_sprites], self.obstacle_sprites, self.create_attack)
+        # self.player = Player((2000, 1453), [self.visible_sprites], self.obstacle_sprites, self.create_attack)
                 
 
     def run(self):
