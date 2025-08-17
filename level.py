@@ -54,14 +54,17 @@ class Level:
                             Tile((x,y), [self.visible_sprites, self.obstacle_sprites], 'object', surf)
                         if style == 'entities':
                             if col == '394':  # example value for player tile
-                                self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites, self.create_attack, self.destroy_weapon)
+                                self.player = Player((x, y),[self.visible_sprites], 
+                                self.obstacle_sprites,
+                                self.create_attack, 
+                                self.destroy_weapon,
+                                self.create_magic)
         #         if col == "x":    
         #             Tile((x, y), [self.visible_sprites,self.obstacle_sprites])
         #         if col == "p":
         #             self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites)
         # self.player = Player((2000, 1453), [self.visible_sprites], self.obstacle_sprites, self.create_attack)
                 
-
     def run(self):
         # update and draw the game
         self.visible_sprites.custom_draw(self.player)
@@ -70,6 +73,11 @@ class Level:
 
     def create_attack(self):
         self.current_attack = Weapon(self.player, [self.visible_sprites])
+
+    def create_magic(self,style,strength,cost):
+        print(style)
+        print(strength)
+        print(cost)
 
     def destroy_weapon(self):
         if self.current_attack:
