@@ -67,19 +67,12 @@ class Level:
                                 elif col == '391': monster_name = 'spirit'
                                 elif col == '392': monster_name = 'raccoon'
                                 else: monster_name = 'squid'
-                                Enemy(monster_name,(x,y),[self.visible_sprites])
-
+                                Enemy(monster_name,(x,y),[self.visible_sprites],self.obstacle_sprites)
         #         if col == "x":    
         #             Tile((x, y), [self.visible_sprites,self.obstacle_sprites])
         #         if col == "p":
         #             self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites)
         # self.player = Player((2000, 1453), [self.visible_sprites], self.obstacle_sprites, self.create_attack)
-                
-    def run(self):
-        # update and draw the game
-        self.visible_sprites.custom_draw(self.player)
-        self.visible_sprites.update()
-        self.ui.display(self.player)
 
     def create_attack(self):
         self.current_attack = Weapon(self.player, [self.visible_sprites])
@@ -94,6 +87,12 @@ class Level:
             self.current_attack.kill()
         self.current_attack = None
 
+    def run(self):
+        # update and draw the game
+        self.visible_sprites.custom_draw(self.player)
+        self.visible_sprites.update()
+        self.visible_sprites.enemy_update(self.player)
+        self.ui.display(self.player)
 
 class YSortCameraGroup(pygame.sprite.Group):
     def __init__(self):
@@ -119,3 +118,7 @@ class YSortCameraGroup(pygame.sprite.Group):
             offset_pos = sprite.rect.topleft - self.offset
             self.display_surface.blit(sprite.image, offset_pos)
     
+    def enemy_update(self,player):
+        enemy_sprites = [sprite for sprite in self.sprites() if hasattr(sprite,'sprite_type') and sprite.sprite_type == 'enemy']
+        for enemy in enemy_sprites:
+            enemy.enemy_update(player)
