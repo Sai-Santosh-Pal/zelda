@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyZelda</title>
+        <!-- Tailwind CDN for quick prototyping, replace with build for production -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'naples-yellow': '#FFE166',
+                            'persian-orange': '#D3865F',
+                            'apple-green': '#ADBC3A',
+                            'asparagus': '#679144',
+                            'fern-green': '#4A7F4B',
+                            'apple-green-2': '#ADBC3A',
+                            'magnolia': '#F2EAF1',
+                        },
+                    },
+                },
+            }
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Press Start 2P', monospace;
+        background: linear-gradient(135deg, #FFE166 0%, #D3865F 20%, #ADBC3A 40%, #679144 60%, #4A7F4B 80%, #F2EAF1 100%);
+        min-height: 100vh;
+    }
+</style>
+<body>
+                        <div class="min-h-screen w-full flex flex-col bg-gradient-to-br from-naples-yellow via-apple-green to-magnolia" style="image-rendering: pixelated;">
+                            <!-- HUD Bar (minimal, just for style) -->
+                            <div class="w-full flex flex-row items-center px-4 py-2 bg-fern-green border-b-4 border-b-persian-orange shadow-lg">
+                                <span class="text-xs text-naples-yellow font-bold tracking-widest" style="font-family: 'Press Start 2P', monospace;">PyZelda</span>
+                                <div class="flex-1"></div>
+                                <span class="text-xs text-magnolia bg-black/60 px-2 py-1 rounded border-2 border-naples-yellow ml-2" style="font-family: 'Press Start 2P', monospace;">v1.0</span>
+                            </div>
+                                    <!-- Landing Content -->
+                                    <div class="flex-1 flex flex-col items-center justify-center py-16">
+                                        <h1 class="text-4xl font-bold text-persian-orange mb-4 tracking-widest drop-shadow-lg" style="font-family: 'Press Start 2P', monospace;">PyZelda</h1>
+                                        <p class="text-lg text-fern-green mb-8 text-center max-w-xl" style="font-family: 'Press Start 2P', monospace;">
+                                            A retro-inspired adventure game. Explore, fight, and discover secrets in a pixel world!
+                                        </p>
+                                        <a href="#" class="px-10 py-4 bg-persian-orange text-magnolia text-2xl rounded-lg border-4 border-naples-yellow shadow-lg font-bold hover:bg-naples-yellow hover:text-persian-orange transition-all duration-200 mb-8" style="font-family: 'Press Start 2P', monospace; letter-spacing: 2px;">Download Game</a>
+                                        <div class="bg-black/30 border-2 border-naples-yellow rounded-lg p-6 max-w-md w-full">
+                                            <ul class="list-disc pl-6 text-magnolia text-base" style="font-family: 'Press Start 2P', monospace;">
+                                                <li>Classic pixel-art graphics</li>
+                                                <li>Challenging enemies</li>
+                                                <li>Secrets and collectibles</li>
+                                                <li>Keyboard controls (WASD)</li>
+                                                <li>Free to play</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                        </div>
+</body>
+</html>
+
