@@ -30,10 +30,11 @@
 <style>
     body {
         font-family: 'Press Start 2P', monospace;
-        background: #A7D7A7; /* lighter fern green */
+        background: #A7D7A7; /* light fern green */
         min-height: 100vh;
         position: relative;
         overflow-x: hidden;
+        color: #2C3A1E; /* darker text for body */
     }
 </style>
 <body>
@@ -55,8 +56,48 @@
                                 <div class="flex-1"></div>
                                 <span class="text-xs text-magnolia bg-black/60 px-2 py-1 rounded border-2 border-naples-yellow ml-2" style="font-family: 'Press Start 2P', monospace;">v1.0</span>
                             </div>
-                                    <!-- Landing Content -->
-                                    <div class="flex-1 flex flex-col items-center justify-center py-16" style="position: relative; z-index: 1;">
+                            <!-- Hero Section -->
+                            <div class="flex-1 flex flex-col items-center justify-center py-20" style="position: relative; z-index: 1;">
+                                <h1 class="text-6xl md:text-7xl font-extrabold text-fern-green text-center mb-4 drop-shadow-lg" style="font-family: 'Press Start 2P', monospace; letter-spacing: 4px;">PyZelda</h1>
+                                <h2 class="text-2xl md:text-3xl text-persian-orange text-center mb-8 font-bold" style="font-family: 'Press Start 2P', monospace;">A Retro Adventure Awaits</h2>
+                                <a href="https://github.com/Sai-Santosh-Pal/pyzelda/releases/download/v1.0/pyzelda.zip" class="px-12 py-5 bg-fern-green text-magnolia text-2xl rounded-lg border-4 border-persian-orange shadow-lg font-bold hover:bg-persian-orange hover:text-fern-green transition-all duration-200 mb-12" style="font-family: 'Press Start 2P', monospace; letter-spacing: 2px;">Download Game</a>
+                                <!-- Features Section -->
+                                <div class="bg-black/30 border-2 border-naples-yellow rounded-lg p-6 max-w-md w-full mb-8">
+                                    <h2 class="text-xl font-bold text-naples-yellow mb-2">Features</h2>
+                                    <ul class="list-disc pl-6 text-magnolia text-base" style="font-family: 'font-family 2P', monospace;">
+                                        <li>Classic pixel-art graphics and animations</li>
+                                        <li>Challenging enemies and boss fights</li>
+                                        <li>Magic and weapon upgrades</li>
+                                        <li>Experience and stat progression</li>
+                                        <li>Interactive environment</li>
+                                        <li>Upgrade menu for player stats</li>
+                                        <li>Sound and music effects</li>
+                                    </ul>
+                                </div>
+                                <!-- How to Play Section -->
+                                <div class="bg-magnolia/80 border-2 border-persian-orange rounded-lg p-6 max-w-xl w-full mb-8">
+                                    <h2 class="text-xl font-bold text-persian-orange mb-2">How to Play</h2>
+                                    <ul class="list-disc pl-6 text-fern-green text-base mb-2">
+                                        <li><b>Movement:</b> Arrow keys (↑, ↓, ←, →)</li>
+                                        <li><b>Attack:</b> Spacebar (swing your weapon)</li>
+                                        <li><b>Magic:</b> Left Ctrl (cast selected magic)</li>
+                                        <li><b>Switch Weapon:</b> Q</li>
+                                        <li><b>Switch Magic:</b> E</li>
+                                        <li><b>Pause/Upgrade Menu:</b> M</li>
+                                        <li><b>Navigate Upgrade Menu:</b> ←/→ (left/right arrow keys), Spacebar to upgrade</li>
+                                    </ul>
+                                    <p class="text-fern-green text-sm">Defeat enemies, collect experience, and use the upgrade menu to improve your stats. Explore the map to find secrets and progress through the game.</p>
+                                </div>
+                                <!-- How to Download Section -->
+                                <div class="bg-magnolia/80 border-2 border-persian-orange rounded-lg p-6 max-w-xl w-full">
+                                    <h2 class="text-xl font-bold text-persian-orange mb-2">How to Download and Run</h2>
+                                    <ol class="list-decimal pl-6 text-fern-green text-base mb-2">
+                                        <li>Go to the <a href="https://github.com/sai-santosh-pal/zelda/releases" target="_blank" class="underline text-persian-orange">Releases</a> page and download the latest <b>.zip</b> file.</li>
+                                        <li>Extract the files using your preferred tool.</li>
+                                        <li>Open the extracted folder and double-click <b>PyZelda.exe</b> to start playing.</li>
+                                    </ol>
+                                </div>
+                            </div>
 </style>
 <style>
 @keyframes float1 { 0% { transform: translateY(0); } 100% { transform: translateY(-30px); } }
